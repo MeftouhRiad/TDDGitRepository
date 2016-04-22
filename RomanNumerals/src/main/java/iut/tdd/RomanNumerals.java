@@ -5,7 +5,7 @@ public class RomanNumerals {
 		return "I";
 	}
 
-	public Object convertFromRoman(String roman) {
+	public String convertFromRoman(String roman) {
 		return "1";
 	}
 
