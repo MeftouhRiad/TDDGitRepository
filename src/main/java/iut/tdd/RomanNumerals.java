@@ -8,7 +8,6 @@ public class RomanNumerals {
 			if (nombre/1000 > 0) {
 				for (int i = 0; i < nombre/1000; i++) {
 					tmp = 'M' + tmp;
-					
 				}
 				nombre -= (nombre/1000) * 1000;
 			}
@@ -42,10 +41,10 @@ public class RomanNumerals {
 				}
 				nombre -= (nombre/5) * 5;
 			}
-				for (int i = 0; i < nombre; i++) {
-					tmp = 'I' + tmp;
-					nombre--;
-				}
+			for (int i = 0; i < nombre; i++) {
+				tmp = 'I' + tmp;
+				nombre--;
+			}
 		}
 		return tmp;
 	}
@@ -53,46 +52,51 @@ public class RomanNumerals {
 	public String convertFromRoman(String roman) {
 		String tmp = "";
 		int nbr = 0;
+		int nbra = 0;
+		int nbrp = 0;
 		boolean retirer = false;
 		for (int i = roman.length()-1; i >= 0 ; i--) {
-			char charat = roman.charAt(i);
+			char charat = roman.charAt(i);	
+
+			
 			if (charat == 'M') {
-				nbr += 1000;
-				retirer = true;
+				nbra = 1000;
 			}
 			if (charat == 'D') {
-				nbr += 500;
-				retirer = true;
+				nbra = 500;
 			}
 			if (charat == 'C') {
-				nbr += 100;
-				retirer = true;
+				nbra = 100;
 			}
 			if (charat == 'L') {
-				nbr += 50;
-				retirer = true;
+				nbra = 50;
 			}
 			if (charat == 'X') {
-				nbr += 10;
-				retirer = true;
+				nbra = 10;
 			}
 			if (charat == 'V') {
-				nbr += 5;
-				retirer = true;
+				nbra = 5;
 			}
 			if (charat == 'I') {
-				if (retirer)
-					nbr -= 1;
-				else
-					nbr += 1;
+				nbra = 1;
 			}
+			
+			if (nbrp > 0)
+				if (nbra > nbrp)
+					retirer = true;
+			
+			if (retirer)
+				nbr = (nbr - nbrp) + (nbra-nbrp);
+			else nbr += nbra;
+			
+			retirer = false;
 		}
 		tmp = nbr+"";
 		return tmp;
 	}
 
 	/*
-	 
+
 1 = I
 
 5 = V

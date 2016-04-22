@@ -30,6 +30,30 @@ public class RomanNumeralsTest {
 	}
 	
 	@Test
+	public void should_return_III_when_3 () {
+		//Given
+		String input = "3";
+		String expected = "III";
+		RomanNumerals romanNumeral = new RomanNumerals();
+		//When
+		String actual = romanNumeral.convertToRoman(input);
+		//Then
+		Assert.assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void should_return_IV_when_4 () {
+		//Given
+		String input = "4";
+		String expected = "IV";
+		RomanNumerals romanNumeral = new RomanNumerals();
+		//When
+		String actual = romanNumeral.convertToRoman(input);
+		//Then
+		Assert.assertEquals(expected, actual);
+	}
+	
+	@Test
 	public void should_return_2_when_II () {
 		//Given
 		String input = "II";
