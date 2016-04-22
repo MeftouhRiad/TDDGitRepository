@@ -35,20 +35,49 @@ public class RomanNumerals {
 					tmp += 'V';
 				}
 			}
-			if (nombre / 1 > 0) {
-				for (int i = 0; i < nombre/1; i++) {
+				for (int i = 0; i < nombre; i++) {
 					tmp += 'I';
 				}
-			}
 		}
 		return tmp;
 	}
 
 	public String convertFromRoman(String roman) {
 		String tmp = "";
-		for (int i = 0; i < roman.length(); i++) {
-			if (roman.charAt(i) == 'I')
-				tmp += '1';
+		int nbr = 0;
+		boolean retirer = false;
+		for (int i = roman.length()-1; i >= 0 ; i--) {
+			char charat = roman.charAt(i);
+			if (charat == 'M') {
+				nbr += 1000;
+				retirer = true;
+			}
+			if (charat == 'D') {
+				nbr += 500;
+				retirer = true;
+			}
+			if (charat == 'C') {
+				nbr += 100;
+				retirer = true;
+			}
+			if (charat == 'L') {
+				nbr += 50;
+				retirer = true;
+			}
+			if (charat == 'X') {
+				nbr += 10;
+				retirer = true;
+			}
+			if (charat == 'V') {
+				nbr += 5;
+				retirer = true;
+			}
+			if (charat == 'I') {
+				if (retirer)
+					nbr -= 1;
+				else
+					nbr += 1;
+			}
 		}
 		return tmp;
 	}
