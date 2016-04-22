@@ -29,4 +29,16 @@ public class RomanNumeralsTest {
 		Assert.assertEquals(expected, actual);
 	}
 	
+	@Test
+	public void should_return_2_when_II () {
+		//Given
+		String input = "II";
+		String expected = "2";
+		RomanNumerals romanNumeral = new RomanNumerals();
+		//When
+		String actual = romanNumeral.convertToRoman(input);
+		//Then
+		Assert.assertEquals(expected, actual);
+	}
+	
 }

@@ -79,6 +79,7 @@ public class RomanNumerals {
 					nbr += 1;
 			}
 		}
+		tmp = nbr+"";
 		return tmp;
 	}
 
