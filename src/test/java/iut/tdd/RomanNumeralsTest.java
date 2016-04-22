@@ -36,7 +36,7 @@ public class RomanNumeralsTest {
 		String expected = "2";
 		RomanNumerals romanNumeral = new RomanNumerals();
 		//When
-		String actual = romanNumeral.convertToRoman(input);
+		String actual = romanNumeral.convertFromRoman(input);
 		//Then
 		Assert.assertEquals(expected, actual);
 	}
