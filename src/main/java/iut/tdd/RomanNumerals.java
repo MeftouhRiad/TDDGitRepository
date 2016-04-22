@@ -54,11 +54,13 @@ public class RomanNumerals {
 		int nbr = 0;
 		int nbra = 0;
 		int nbrp = 0;
+		System.out.println("Nombre : "+roman);
 		boolean retirer = false;
-		for (int i = roman.length()-1; i >= 0 ; i--) {
+		for (int i = 0; i < roman.length() ; i++) {
 			char charat = roman.charAt(i);	
+			System.out.println("Charac : "+charat);
+			System.out.println("nbrp : "+nbrp);
 
-			
 			if (charat == 'M') {
 				nbra = 1000;
 			}
@@ -89,6 +91,7 @@ public class RomanNumerals {
 				nbr = (nbr - nbrp) + (nbra-nbrp);
 			else nbr += nbra;
 			
+			nbrp = nbra;
 			retirer = false;
 		}
 		tmp = nbr+"";
